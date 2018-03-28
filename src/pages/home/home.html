@@ -1,0 +1,48 @@
+
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-grid>
+
+      <ion-row class="vehicles">
+        <ion-col > <img src="assets/imgs/motor.png" ion-long-press (onPressEnd)="showActionSheet()" > <span> Motorcycle </span> </ion-col>
+        <ion-col> <img src="assets/imgs/economy.png"> <span> Economy </span> </ion-col>
+        <ion-col> <img src="assets/imgs/l300.png"> <span> L300 Van </span> </ion-col> 
+        <ion-col> <img src="assets/imgs/closed-van.png"> <span> Closed Van </span> </ion-col>
+      </ion-row>
+
+      <ion-row class="pick-locations">
+        <ion-col col-2 class="icon-pin"> <img src="assets/imgs/to-from.png">  </ion-col>
+        <ion-col col-9> 
+          <ion-input (ionFocus)="locate('pickup')" class="pickup-input" placeholder='Pick up Location'></ion-input> 
+          <ion-input (ionFocus)="locate('dropoff')" placeholder='Drop off Location'></ion-input>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="set-schedule">
+        
+        <ion-col col-12>
+          <ion-list>
+            <ion-list-header>
+              Set a schedule
+            </ion-list-header>
+            <ion-item> <img src="assets/imgs/quick.png"> Immediate </ion-item>
+            <ion-item> <img src="assets/imgs/schedule.png"> Schedule (Up to 14 days)</ion-item>
+            <ion-item> <img src="assets/imgs/full-day.png"> Full Day / 24 hours </ion-item>
+          </ion-list>
+        </ion-col>
+
+      </ion-row> 
+
+      <button ion-button block (click)="submitJobOrder()" > Next </button>
+
+    </ion-grid> 
+</ion-content>
